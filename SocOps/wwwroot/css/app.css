@@ -273,7 +273,6 @@ button:disabled {
     pointer-events: none;
 }
 
-.cosmic-start-hero,
 .cosmic-panel,
 .cosmic-board-wrap,
 .cosmic-modal {
@@ -287,8 +286,239 @@ button:disabled {
 }
 
 .cosmic-start-hero {
+    max-width: 72rem;
+    padding: 1.25rem;
+}
+
+.cosmic-start-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
+    align-items: center;
+    gap: clamp(2rem, 6vw, 6rem);
+}
+
+.cosmic-start-copy {
+    padding: clamp(1rem, 3vw, 2.5rem) 0;
+    animation: cosmic-rise 500ms ease-out both;
+}
+
+.cosmic-start-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2.75rem;
+    border: 1px solid rgba(126, 228, 255, 0.28);
+    border-radius: 999px;
+    padding: 0.4rem 0.7rem;
+    color: var(--cosmic-highlight-soft);
+    background: rgba(21, 57, 88, 0.42);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.cosmic-status-dot {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: #ffcf75;
+    box-shadow: 0 0 0 4px rgba(255, 207, 117, 0.12), 0 0 12px rgba(255, 207, 117, 0.8);
+}
+
+.cosmic-start-copy .cosmic-kicker {
+    margin-bottom: 0.65rem;
+}
+
+.cosmic-start-copy .cosmic-title {
+    font-size: clamp(3.2rem, 9vw, 7.5rem);
+    letter-spacing: 0.06em;
+    text-align: left;
+}
+
+.cosmic-start-copy .cosmic-subtitle {
     max-width: 31rem;
-    padding: 2rem;
+    margin: 1rem 0 1.1rem;
+    color: var(--cosmic-highlight-soft);
+    font-size: clamp(1.15rem, 2.2vw, 1.65rem);
+    line-height: 1.35;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+
+.cosmic-start-lede {
+    max-width: 30rem;
+    margin: 0;
+    color: var(--cosmic-text-muted);
+    font-family: "Segoe UI", sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    text-align: left;
+}
+
+.cosmic-start-actions {
+    max-width: 27rem;
+    margin-top: 2.25rem;
+}
+
+.cosmic-start-actions .cosmic-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 3.5rem;
+    padding: 0.9rem 1.25rem 0.9rem 1.4rem;
+}
+
+.cosmic-cta-arrow {
+    font-size: 1.35rem;
+    transition: transform 140ms ease;
+}
+
+.cosmic-cta:hover,
+.cosmic-cta:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(57, 185, 223, 0.48);
+}
+
+.cosmic-cta:hover .cosmic-cta-arrow,
+.cosmic-cta:focus-visible .cosmic-cta-arrow {
+    transform: translateX(0.25rem);
+}
+
+.cosmic-cta:focus-visible,
+.cosmic-ghost-btn:focus-visible {
+    outline: 3px solid rgba(255, 207, 117, 0.78);
+    outline-offset: 3px;
+}
+
+.cosmic-start-note {
+    margin: 0.8rem 0 0;
+    color: rgba(192, 212, 235, 0.72);
+    font-family: "Segoe UI", sans-serif;
+    font-size: 0.77rem;
+    text-align: center;
+}
+
+.cosmic-start-preview {
+    position: relative;
+    max-width: 30rem;
+    justify-self: end;
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+    border: 1px solid var(--cosmic-border-strong);
+    border-radius: 1.2rem;
+    background: linear-gradient(155deg, rgba(22, 54, 88, 0.82), rgba(5, 19, 40, 0.82));
+    box-shadow: 0 0 0 8px rgba(112, 207, 241, 0.04), var(--cosmic-glow);
+    transform: rotate(2deg);
+    animation: cosmic-float 5s ease-in-out infinite, cosmic-rise 650ms 100ms ease-out both;
+}
+
+.cosmic-preview-topline,
+.cosmic-preview-caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--cosmic-highlight-soft);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.cosmic-preview-topline {
+    margin-bottom: 1rem;
+}
+
+.cosmic-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.45rem;
+    aspect-ratio: 1;
+}
+
+.cosmic-preview-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    border: 1px solid rgba(148, 199, 255, 0.24);
+    border-radius: 0.55rem;
+    color: rgba(192, 212, 235, 0.52);
+    background: rgba(18, 43, 72, 0.72);
+    font-size: clamp(0.65rem, 2vw, 0.9rem);
+    font-weight: 700;
+}
+
+.cosmic-preview-cell-marked {
+    border-color: rgba(126, 228, 255, 0.72);
+    color: var(--cosmic-text);
+    background: linear-gradient(145deg, rgba(58, 147, 190, 0.76), rgba(23, 82, 125, 0.7));
+    box-shadow: inset 0 0 0 1px rgba(211, 246, 255, 0.12), 0 0 12px rgba(89, 201, 237, 0.14);
+}
+
+.cosmic-preview-cell-free {
+    border-color: rgba(255, 221, 149, 0.66);
+    color: #ffe9b9;
+    background: rgba(163, 111, 40, 0.44);
+}
+
+.cosmic-preview-caption {
+    justify-content: flex-start;
+    gap: 0.6rem;
+    margin-top: 1rem;
+    color: rgba(192, 212, 235, 0.75);
+    font-family: "Segoe UI", sans-serif;
+    font-size: 0.76rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: none;
+}
+
+.cosmic-preview-line {
+    width: 1.5rem;
+    height: 1px;
+    background: var(--cosmic-highlight);
+    box-shadow: 0 0 8px var(--cosmic-highlight);
+}
+
+.cosmic-start-brief {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: clamp(2rem, 5vw, 4.5rem);
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(148, 199, 255, 0.25);
+    animation: cosmic-rise 600ms 220ms ease-out both;
+}
+
+.cosmic-brief-item {
+    display: flex;
+    gap: 0.8rem;
+    color: var(--cosmic-text-muted);
+    font-family: "Segoe UI", sans-serif;
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+.cosmic-brief-item strong,
+.cosmic-brief-item span:last-child {
+    display: block;
+}
+
+.cosmic-brief-item strong {
+    margin-bottom: 0.15rem;
+    color: var(--cosmic-text);
+    font-family: "Orbitron", "Segoe UI", sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.cosmic-brief-number {
+    color: var(--cosmic-highlight);
+    font-family: "Orbitron", "Segoe UI", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
 }
 
 .cosmic-kicker {
@@ -543,9 +773,80 @@ button:disabled {
     }
 }
 
+@keyframes cosmic-rise {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cosmic-float {
+    0%, 100% {
+        transform: rotate(2deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(2deg) translateY(-8px);
+    }
+}
+
 @media (max-width: 640px) {
     .cosmic-start-hero {
-        padding: 1.35rem;
+        padding: 0.25rem;
+    }
+
+    .cosmic-start-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .cosmic-start-copy {
+        padding: 0.5rem 0;
+    }
+
+    .cosmic-start-status {
+        margin-bottom: 1.75rem;
+    }
+
+    .cosmic-start-copy .cosmic-title,
+    .cosmic-start-copy .cosmic-subtitle,
+    .cosmic-start-lede {
+        text-align: center;
+    }
+
+    .cosmic-start-copy .cosmic-title {
+        letter-spacing: 0.04em;
+    }
+
+    .cosmic-start-lede {
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 0.92rem;
+    }
+
+    .cosmic-start-actions {
+        margin: 1.5rem auto 0;
+    }
+
+    .cosmic-start-preview {
+        width: min(100%, 25rem);
+        justify-self: center;
+        transform: rotate(1deg);
+    }
+
+    .cosmic-start-brief {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        margin-top: 1.75rem;
+    }
+
+    .cosmic-brief-item {
+        align-items: baseline;
     }
 
     .cosmic-panel {

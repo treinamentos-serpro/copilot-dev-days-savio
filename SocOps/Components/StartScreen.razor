@@ -1,23 +1,81 @@
-<div class="cosmic-shell flex flex-col items-center justify-center min-h-full p-6">
-    <section class="cosmic-start-hero text-center w-full">
-        <p class="cosmic-kicker">Nebula Session</p>
-        <h1 class="cosmic-title">Soc Ops</h1>
-        <p class="cosmic-subtitle">Social Bingo, now in orbit.</p>
+<main class="cosmic-shell cosmic-start-shell flex flex-col items-center justify-center min-h-full p-6">
+    <section class="cosmic-start-hero w-full" aria-labelledby="start-title">
+        <div class="cosmic-start-grid">
+            <div class="cosmic-start-copy">
+                <div class="cosmic-start-status">
+                    <span class="cosmic-status-dot" aria-hidden="true"></span>
+                    <span>Live social mission</span>
+                </div>
 
-        <div class="cosmic-panel text-left">
-            <h2>Mission Brief</h2>
-            <ul class="cosmic-list">
-                <li>Find people who match each prompt.</li>
-                <li>Tap a square every time you find a match.</li>
-                <li>Complete 5 in a row to secure BINGO.</li>
-            </ul>
+                <p class="cosmic-kicker">Nebula Session / 01</p>
+                <h1 id="start-title" class="cosmic-title">Soc Ops</h1>
+                <p class="cosmic-subtitle">Turn small talk into a shared adventure.</p>
+                <p class="cosmic-start-lede">Find the people behind the prompts, collect unexpected connections, and be the first to map a line across the room.</p>
+
+                <div class="cosmic-start-actions">
+                    <button @onclick="OnStart" class="cosmic-cta text-lg">
+                        <span>Launch game</span>
+                        <span class="cosmic-cta-arrow" aria-hidden="true">-></span>
+                    </button>
+                    <p class="cosmic-start-note">Built for curious rooms and quick connections.</p>
+                </div>
+            </div>
+
+            <div class="cosmic-start-preview" aria-label="Preview of a social bingo board">
+                <div class="cosmic-preview-topline">
+                    <span>Connection map</span>
+                    <span>5 x 5</span>
+                </div>
+                <div class="cosmic-preview-grid" aria-hidden="true">
+                    <span class="cosmic-preview-cell cosmic-preview-cell-marked">A</span>
+                    <span class="cosmic-preview-cell">B</span>
+                    <span class="cosmic-preview-cell">C</span>
+                    <span class="cosmic-preview-cell cosmic-preview-cell-marked">D</span>
+                    <span class="cosmic-preview-cell">E</span>
+                    <span class="cosmic-preview-cell">F</span>
+                    <span class="cosmic-preview-cell cosmic-preview-cell-marked">G</span>
+                    <span class="cosmic-preview-cell cosmic-preview-cell-marked">H</span>
+                    <span class="cosmic-preview-cell">I</span>
+                    <span class="cosmic-preview-cell">J</span>
+                    <span class="cosmic-preview-cell">K</span>
+                    <span class="cosmic-preview-cell">L</span>
+                    <span class="cosmic-preview-cell cosmic-preview-cell-free">+</span>
+                    <span class="cosmic-preview-cell">N</span>
+                    <span class="cosmic-preview-cell">O</span>
+                    <span class="cosmic-preview-cell">P</span>
+                    <span class="cosmic-preview-cell cosmic-preview-cell-marked">Q</span>
+                    <span class="cosmic-preview-cell">R</span>
+                    <span class="cosmic-preview-cell">S</span>
+                    <span class="cosmic-preview-cell">T</span>
+                    <span class="cosmic-preview-cell">U</span>
+                    <span class="cosmic-preview-cell">V</span>
+                    <span class="cosmic-preview-cell">W</span>
+                    <span class="cosmic-preview-cell">X</span>
+                    <span class="cosmic-preview-cell cosmic-preview-cell-marked">Y</span>
+                </div>
+                <div class="cosmic-preview-caption">
+                    <span class="cosmic-preview-line" aria-hidden="true"></span>
+                    <span>Every square starts a conversation.</span>
+                </div>
+            </div>
         </div>
 
-        <button @onclick="OnStart" class="cosmic-cta text-lg">
-            Launch Game
-        </button>
+        <div class="cosmic-start-brief">
+            <div class="cosmic-brief-item">
+                <span class="cosmic-brief-number">01</span>
+                <div><strong>Meet</strong><span>Find someone who fits the square.</span></div>
+            </div>
+            <div class="cosmic-brief-item">
+                <span class="cosmic-brief-number">02</span>
+                <div><strong>Mark</strong><span>Tap it when the connection is real.</span></div>
+            </div>
+            <div class="cosmic-brief-item">
+                <span class="cosmic-brief-number">03</span>
+                <div><strong>Win</strong><span>Complete five in a row.</span></div>
+            </div>
+        </div>
     </section>
-</div>
+</main>
 
 @code {
     [Parameter]
